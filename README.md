@@ -1,7 +1,7 @@
 ローカルにインストール
 
 ```
-git clone https://github.com/Masaaki618/addTodo.git
+git clone https://github.com/Masaaki618/todo_app.git
 ```
 
 ルート直下に.envファイルの作成
