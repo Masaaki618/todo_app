@@ -90,4 +90,3 @@ issue#1 モデルの作成の場合
 
 例）
 `git commit -m '#1 add: modelの作成' `
-
