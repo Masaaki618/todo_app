@@ -24,7 +24,8 @@ make build
 make up
 ```
 
-dbの作成
+dbの作成、マイグレーションの実行
+※コンテナが立ち上がっていることを確認する。
 
 ```
 make db_
@@ -90,4 +91,3 @@ issue#1 モデルの作成の場合
 
 例）
 `git commit -m '#1 add: modelの作成' `
-
