@@ -7,8 +7,8 @@ git clone https://github.com/Masaaki618/todo_app.git
 ルート直下に.envファイルの作成
 
 ```
-DB_HOST=db 
-DB_USER=postgres 
+DB_HOST=db
+DB_USER=postgres
 DB_PASSWORD=password
 ```
 
@@ -91,3 +91,5 @@ issue#1 モデルの作成の場合
 
 例）
 `git commit -m '#1 add: modelの作成' `
+
+your name??
