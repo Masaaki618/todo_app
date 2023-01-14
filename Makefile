@@ -11,7 +11,7 @@ stop:
 	docker-compose stop
 
 db_:
-	docker-compose run web rails db:create db:migrate
+	docker-compose exec web rails db:create db:migrate
 
 down:
 	docker-compose down -v
