@@ -4,11 +4,11 @@
 git clone https://github.com/Masaaki618/todo_app.git
 ```
 
-ルート直下に.envファイルの作成
+ルート直下に.env ファイルの作成
 
 ```
-DB_HOST=db 
-DB_USER=postgres 
+DB_HOST=db
+DB_USER=postgres
 DB_PASSWORD=password
 ```
 
@@ -24,7 +24,7 @@ make build
 make up
 ```
 
-dbの作成
+db の作成
 
 ```
 make db_
@@ -40,7 +40,7 @@ make db_
 make bash
 ```
 
-コンテナの起動 dockerのログを確認したい時
+コンテナの起動 docker のログを確認したい時
 
 ```
 make up_log
@@ -81,12 +81,13 @@ issue#1 モデルの作成の場合
 #issue 番号 + プレフィックス + 日本語で端的に
 
 - **プレフィックス**をつける
-    - add: 機能追加
-    - fix: バグ修正
-    - config: 設定
-    - refactor: リファクタリング
-    - docs:ドキュメント
-    - chore: その他環境構築など雑用
+  - add: 機能追加
+  - fix: バグ修正
+  - config: 設定
+  - refactor: リファクタリング
+  - docs:ドキュメント
+  - chore: その他環境構築など雑用
 
 例）
 `git commit -m '#1 add: modelの作成' `
+りょおおおお
