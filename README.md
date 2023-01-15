@@ -75,7 +75,7 @@ issue 番号を必ず含める
 **＜具体例＞**
 issue#1 モデルの作成の場合
 
-`git checkout -b '#1-add-model'`
+`git checkout -b 'add-model-#1'`
 
 #### コミットメッセージ
 
@@ -90,10 +90,4 @@ issue#1 モデルの作成の場合
   - chore: その他環境構築など雑用
 
 例）
-`git commit -m '#1 add: modelの作成' `
-<<<<<<< HEAD
-
-your name??
-=======
-りょおおおお
->>>>>>> main
+`git commit -m 'add: modelの作成 #1' `
