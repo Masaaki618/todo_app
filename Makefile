@@ -21,3 +21,6 @@ bash:
 
 all_dell:
 	docker system prune --all
+
+rspec:
+	docker-compose exec web bundle exec rspec spec
