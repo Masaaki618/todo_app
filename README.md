@@ -66,6 +66,12 @@ make down
 make all_dell
 ```
 
+RSpec の実行
+
+```
+make rspec
+```
+
 ---
 
 #### ブランチ命名規則
