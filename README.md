@@ -65,6 +65,21 @@ make down
 ```
 make all_dell
 ```
+---
+
+Rubocop Airbnb使用時のコマンド
+
+rubocop-airbnbにて検証
+
+```
+make rubocop
+```
+
+rubocop-airbnbにて自動修正
+
+```
+make rubocop_a
+```
 
 ---
 
@@ -73,13 +88,13 @@ make all_dell
 issue 番号を必ず含める
 
 **＜具体例＞**
-issue#1 モデルの作成の場合
+モデルの作成 + issue#1 の場合
 
 `git checkout -b 'add-model-#1'`
 
 #### コミットメッセージ
 
-#issue 番号 + プレフィックス + 日本語で端的に
+プレフィックス + 日本語で端的に + #issue 番号
 
 - **プレフィックス**をつける
   - add: 機能追加
