@@ -2,9 +2,7 @@ FROM ruby:2.5.1
 
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get update -qq && apt-get install -y \
-      git \
       nodejs \
-      vim \
       postgresql-client
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
