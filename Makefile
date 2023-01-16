@@ -21,3 +21,10 @@ bash:
 
 all_dell:
 	docker system prune --all
+
+# rubocop-airbnb使用時のコマンド
+rubocop:
+	bundle exec rubocop --require rubocop-airbnb
+
+rubocop_a:
+	bundle exec rubocop --require rubocop-airbnb -a
