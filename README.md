@@ -80,7 +80,6 @@ rubocop-airbnb にて自動修正
 
 ```
 make doc_rubo_a
-
 ```
 
 Rspec の実行
