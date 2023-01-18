@@ -23,4 +23,19 @@ all_dell:
 	docker system prune --all
 
 rspec:
-	docker-compose exec web bundle exec rspec
+	docker-compose exec web rspec
+    
+# rubocop-airbnb使用時のコマンド
+# コンテナ内
+rubocop:
+	bundle exec rubocop --require rubocop-airbnb
+
+rubocop_a:
+	bundle exec rubocop --require rubocop-airbnb -a
+
+# コンテナ外
+doc_rubo:
+	docker-compose exec web rubocop --require rubocop-airbnb
+
+doc_rubo_a:
+	docker-compose exec web rubocop --require rubocop-airbnb -a

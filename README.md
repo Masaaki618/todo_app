@@ -66,7 +66,24 @@ make down
 make all_dell
 ```
 
-RSpec の実行
+---
+
+Rubocop Airbnb 使用時のコマンド
+
+rubocop-airbnb にて検証
+
+```
+make doc_rubo
+```
+
+rubocop-airbnb にて自動修正
+
+```
+make doc_rubo_a
+
+```
+
+Rspec の実行
 
 ```
 make rspec
@@ -79,13 +96,13 @@ make rspec
 issue 番号を必ず含める
 
 **＜具体例＞**
-issue#1 モデルの作成の場合
+モデルの作成 + issue#1 の場合
 
 `git checkout -b 'add-model-#1'`
 
 #### コミットメッセージ
 
-#issue 番号 + プレフィックス + 日本語で端的に
+プレフィックス + 日本語で端的に + #issue 番号
 
 - **プレフィックス**をつける
   - add: 機能追加

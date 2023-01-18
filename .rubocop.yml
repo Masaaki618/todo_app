@@ -1,0 +1,57 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+# Rails用に最適化
+Rails:
+  Enabled: true
+
+# 文字数上限
+Layout/LineLength:
+  Max: 130
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'node_modules/**/*'
+    - 'bin/*'
+    - '**/Gemfile'
+    - 'vendor/**/*'
+    - '.git/**/*'
+
+# 以下を設定することによりデフォルトで新しい警官をオプトインすることも可能になる
+Rails/ActiveRecordCallbacksOrder: # (new in 2.7)
+  Enabled: false
+Rails/AfterCommitOverride: # (new in 2.8)
+  Enabled: false
+Rails/AttributeDefaultBlockValue: # (new in 2.9)
+  Enabled: false
+Rails/FindById: # (new in 2.7)
+  Enabled: false
+Rails/Inquiry: # (new in 2.7)
+  Enabled: false
+Rails/MailerName: # (new in 2.7)
+  Enabled: false
+Rails/MatchRoute: # (new in 2.7)
+  Enabled: false
+Rails/NegateInclude: # (new in 2.7)
+  Enabled: false
+Rails/Pluck: # (new in 2.7)
+  Enabled: false
+Rails/PluckInWhere: # (new in 2.7)
+  Enabled: false
+Rails/RenderInline: # (new in 2.7)
+  Enabled: false
+Rails/RenderPlainText: # (new in 2.7)
+  Enabled: false
+Rails/ShortI18n: # (new in 2.7)
+  Enabled: false
+Rails/SquishedSQLHeredocs: # (new in 2.8)
+  Enabled: false
+Rails/WhereEquals: # (new in 2.9)
+  Enabled: false
+Rails/WhereExists: # (new in 2.7)
+  Enabled: false
+Rails/WhereNot: # (new in 2.8)
+  Enabled: false
