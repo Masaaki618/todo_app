@@ -11,7 +11,7 @@ stop:
 	docker-compose stop
 
 db_:
-	docker-compose run web rails db:create db:migrate
+	docker-compose exec web rails db:create db:migrate
 
 down:
 	docker-compose down -v
@@ -21,3 +21,18 @@ bash:
 
 all_dell:
 	docker system prune --all
+
+# rubocop-airbnb使用時のコマンド
+# コンテナ内
+rubocop:
+	bundle exec rubocop --require rubocop-airbnb
+
+rubocop_a:
+	bundle exec rubocop --require rubocop-airbnb -a
+
+# コンテナ外
+doc_rubo:
+	docker-compose exec web bundle exec rubocop --require rubocop-airbnb
+
+doc_rubo_a:
+	docker-compose exec web bundle exec rubocop --require rubocop-airbnb -a
