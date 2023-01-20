@@ -65,20 +65,27 @@ make down
 ```
 make all_dell
 ```
+
 ---
 
-Rubocop Airbnb使用時のコマンド
+Rubocop Airbnb 使用時のコマンド
 
-rubocop-airbnbにて検証
-
-```
-make rubocop
-```
-
-rubocop-airbnbにて自動修正
+rubocop-airbnb にて検証
 
 ```
-make rubocop_a
+make doc_rubo
+```
+
+rubocop-airbnb にて自動修正
+
+```
+make doc_rubo_a
+```
+
+Rspec の実行
+
+```
+make rspec
 ```
 
 ---
