@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2023_01_19_132340) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tasks_on_name", unique: true
   end
 
 end
