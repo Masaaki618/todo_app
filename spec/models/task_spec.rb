@@ -16,7 +16,7 @@ RSpec.describe Task, type: :model do
         expect(task.errors[:name]).to include('を入力してください')
       end
 
-      it 'nameの文字すが30文字以上の場合無効であること' do
+      it 'nameの文字数が30文字以上の場合無効であること' do
         task = build(:task, name: 'a' * 31)
         expect(task.valid?).to be false
         expect(task.errors[:name]).to include('は30文字以内で入力してください')
