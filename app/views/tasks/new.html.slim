@@ -4,6 +4,7 @@ h1 タスクの新規登録
   = link_to '一覧', tasks_path, class: 'nav-link'
 
 = form_with model: @task, local: true do |f|
+  = render 'shared/error_messages', model: f.object
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control', id: 'task_name'
