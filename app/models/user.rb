@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, uniqueness: true, presence: true
+  validates :name, uniqueness: true, presence: true, length: { in: 3..20 }
 end
