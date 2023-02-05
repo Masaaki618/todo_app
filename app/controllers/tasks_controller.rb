@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   skip_before_action :require_login, :logged_in_user
 
   def index
-    @tasks = current_user.tasks
+    @tasks = Task.all
   end
 
   def new
