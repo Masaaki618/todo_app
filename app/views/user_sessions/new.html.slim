@@ -1,0 +1,14 @@
+h1.my-3 ログイン
+
+= form_with url: login_path, method: :post do |f|
+
+  .form-group.mb-3
+    = f.label :メールアドレス, class: 'form-label'
+    = f.email_field :email, class: 'form-control', required: true
+
+  .form-group.mb-3
+    = f.label :パスワード, class: 'form-label'
+    = f.password_field :password, class: 'form-control', id: 'usr_password', required: true, minlength: '3'
+  = f.submit 'ログイン', class: 'btn btn-primary mt-2 mb-3'
+
+= link_to 'ユーザー登録はこちら', sign_up_path, class: 'text-decoration-none'
