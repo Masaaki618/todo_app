@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  skip_before_action :require_login, :logged_in_user
+
   def index
     @tasks = Task.all
   end
