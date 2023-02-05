@@ -9,4 +9,9 @@ class UserSessionsController < ApplicationController
       redirect_to login_path, danger: "ログインに失敗しました"
     end
   end
+
+  def destroy
+    logout
+    redirect_to login_path, success: "ログアウトしました"
+  end
 end
