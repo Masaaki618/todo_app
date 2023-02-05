@@ -1,12 +1,34 @@
+h1.my-3 ユーザー登録
+
 = form_with model: @user, url: sign_up_path, local: true do |f|
+  = render 'shared/error_messages', model: f.object
 
-  = f.label :email
-  = f.text_field :email
+  .form-group.mb-3
+    = f.label :name, class: 'form-label'
+    = f.text_field :name, class: 'form-control', required: true, minlength: "3", maxlenght: '20'
 
-  = f.label :password
-  = f.password_field :password
+  .form-group.mb-3
+    = f.label :email, class: 'form-label'
+    = f.email_field :email, class: 'form-control', required: true
 
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
+  .form-group.mb-3
+    = f.label :password, class: 'form-label'
+    = f.password_field :password, class: 'form-control', id: 'usr_password', required: true, minlength: '3', id: 'password'
 
-  = f.submit "登録"
+  .form-group.mb-3
+    = f.label :password_confirmation, class: 'form-label'
+    = f.password_field :password_confirmation, class: 'form-control', required: true, minlength: '3', oninput: 'CheckPasswordConfirmation(this)'
+  = f.submit '登録する', class: 'btn btn-primary mt-2 mb-3'
+
+  javascript:
+    function CheckPasswordConfirmation(password_confirmation) {
+      const val1 = document.getElementById("password").value
+      const val2 = password_confirmation.value
+      if (val1 != val2) {
+        password_confirmation.setCustomValidity("入力値が一致しません。");
+      } else {
+        password_confirmation.setCustomValidity("");
+      }
+    }
+
+= link_to 'ログインはこちら', login_path, class: 'text-decoration-none'
