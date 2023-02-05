@@ -10,16 +10,11 @@ html
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
       .container.d-flex.w-100
-        .navbar-brand
-          | Taskleaf
+        = link_to 'Taskleaf', root_path, class: 'navbar-brand'
         - if logged_in?
-          .d-flex.w-25.justify-content-evenly
-            = current_user.name
-            = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+          = render partial: 'shared/login_link'
         - else
-          .d-flex.w-25.justify-content-evenly
-            = link_to '新規登録', sign_up_path, class: 'nav-link'
-            = link_to 'ログイン', login_path, class: 'nav-link'
+          = render partial: 'shared/before_login_link'
 
     .container
       = render partial: 'shared/flash_messages'
