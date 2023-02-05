@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true, presence: true
   validates :name, uniqueness: true, presence: true, length: { in: 3..20 }
+
+  has_many :tasks, dependent: :destroy
 end
