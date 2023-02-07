@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :require_login, :logged_in_user
 
   def not_authenticated
-    flash[:danger] = 'ログインが必要です'
+    flash[:warning] = 'ログインが必要です'
     redirect_to login_path
   end
 
