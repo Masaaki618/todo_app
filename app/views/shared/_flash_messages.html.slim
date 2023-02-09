@@ -1,2 +1,3 @@
-- if flash.notice.present?
-  .alert.alert-success= flash.notice
+.mt-3
+  - flash.each do |message_type, message|
+    = content_tag :div, message, class: "alert alert-#{message_type}", id: 'flash'

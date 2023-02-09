@@ -1,9 +1,9 @@
 = form_with model: @task, local: true do |f|
   = render 'shared/error_messages', model: f.object
-  .form-group
-    = f.label :name
+  .form-group.mb-3
+    = f.label :name, class: 'form-label'
     = f.text_field :name, class: 'form-control', id: 'task_name'
-  .form-group
-    = f.label :description
+  .form-group.mb-3
+    = f.label :description, class: 'form-label'
     = f.text_area :description, rows: 5, class: 'form-control', id: 'task_description'
   = f.submit nil, class: 'btn btn-primary'

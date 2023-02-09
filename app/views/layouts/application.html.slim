@@ -5,11 +5,18 @@ html
       | Myapp
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-      .navbar-brand Taskleaf
+      .container.d-flex.w-100
+        = link_to 'Taskleaf', root_path, class: 'navbar-brand'
+        - if logged_in?
+          = render partial: 'shared/login_link'
+        - else
+          = render partial: 'shared/before_login_link'
+
     .container
       = render partial: 'shared/flash_messages'
-      = yield
+      .mt-3
+        = yield
