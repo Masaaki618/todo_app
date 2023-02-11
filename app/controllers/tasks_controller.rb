@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   skip_before_action :logged_in_user
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
     @tasks = current_user.tasks.recent
@@ -19,15 +20,12 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to tasks_url, success: "タスク 「#{@task.name}」を更新しました。"
     else
@@ -36,7 +34,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_url, success: "タスク「#{@task.name}」を削除しました。"
   end
@@ -45,5 +42,9 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:name, :description)
+  end
+
+  def set_task
+    @task = current_user.tasks.find(params[:id])
   end
 end
