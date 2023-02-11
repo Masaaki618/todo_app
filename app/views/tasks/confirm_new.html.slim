@@ -9,7 +9,7 @@ h1 登録内容の確認
         = f.hidden_field :name
       tr
         th= Task.human_attribute_name(:description)
-        td= simple_format(@task.description)
+        td= auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div"))
         = f.hidden_field :description
   = f.submit '戻る', name: 'back', class: 'btn btn-secondary mr-3'
   = f.submit '登録', class: 'btn btn-primary ms-2'
