@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   skip_before_action :logged_in_user
 
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.recent
   end
 
   def new
