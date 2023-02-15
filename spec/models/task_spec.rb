@@ -22,11 +22,11 @@ RSpec.describe Task, type: :model do
         expect(task.errors).to be_added(:name, :too_long, count: 30)
       end
 
-      # it 'nameが既に登録されていたら無効であること' do
-      #   task = build(:task, name: create_task.name)
-      #   expect(task.valid?).to be false
-      #   expect(task.errors).to be_added(:name, :taken)
-      # end
+      fit 'nameが既に登録されていたら無効であること' do
+        task = build(:task, name: create_task.name, user_id: create_task.user_id)
+        expect(task.valid?).to be false
+        expect(task.errors).to be_added(:name, :taken)
+      end
 
       it 'nameに「,」が含まれていたら無効であること' do
         task = build(:task, name: ',')
