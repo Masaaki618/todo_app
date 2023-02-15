@@ -88,6 +88,12 @@ Rspec の実行
 make rspec
 ```
 
+System Spec の実行
+
+```
+make system_spec
+```
+
 ---
 
 #### ブランチ命名規則
