@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  validates :name, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :name, presence: true, length: { maximum: 30 }, uniqueness: { scope: :user_id }
   validate :validate_name_not_including_comma
   belongs_to :user
 

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'tasks#index'
-  resources :tasks
+  resources :tasks do
+    post :confirm, action: :confirm_new, on: :new
+  end
 
   get 'sign_up', to: 'users#new'
   post 'sign_up', to: 'users#create'
