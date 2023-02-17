@@ -23,3 +23,4 @@ services:
   selenium_chrome:
     # image: selenium/standalone-chrome-debug //Intel用
     image: seleniarm/standalone-chromium:latest
+    shm_size: 256m
