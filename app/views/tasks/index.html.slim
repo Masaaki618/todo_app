@@ -23,7 +23,7 @@ table.table.table-hover
   thead.thead-default
     tr
       th= sort_link(@q, :name)
-      th= Task.human_attribute_name(:created_at)
+      th= sort_link(@q, :created_at)
       th= 
   tbody
     = render @tasks
