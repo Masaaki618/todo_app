@@ -21,6 +21,5 @@ services:
     environment:
       - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
   selenium_chrome:
-    # image: selenium/standalone-chrome-debug //Intel用
     image: seleniarm/standalone-chromium:latest
     shm_size: 256m
