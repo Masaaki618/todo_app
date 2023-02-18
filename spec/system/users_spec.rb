@@ -32,9 +32,16 @@ RSpec.describe 'Users', type: :system do
     end
 
     describe 'ログイン後' do
-      it 'ログアウトが成功すること' do
+      before do
         login(user)
-        expect(page).to have_link 'ログアウト', href: logout_path
+        visit root_path
+      end
+      it 'ログイン状態であること' do
+        expect(current_path).to eq root_path
+      end
+      it 'ログアウトが成功すること' do
+        visit root_path
+        expect(page).to have_content 'ログアウト'
       end
     end
   end
