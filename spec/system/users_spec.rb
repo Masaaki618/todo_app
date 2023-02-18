@@ -8,6 +8,7 @@ RSpec.describe 'Users', type: :system do
       before do
         visit sign_up_path
       end
+
       context 'フォームの入力値が正常' do
         it 'ユーザーの新規作成が成功すること' do
           fill_in 'user_name', with: 'テストユーザー'
@@ -32,16 +33,23 @@ RSpec.describe 'Users', type: :system do
     end
 
     describe 'ログイン後' do
+      let(:user_a) { FactoryBot.create(:user, name: 'ユーザーA', email: 'a@example.com') }
+
       before do
         login(user)
-        visit root_path
       end
-      it 'ログイン状態であること' do
-        expect(current_path).to eq root_path
-      end
-      it 'ログアウトが成功すること' do
-        visit root_path
-        expect(page).to have_content 'ログアウト'
+
+      context 'ユーザーAがログインしているとき' do
+        let(:user) { user_a }
+
+        it 'ログイン状態であること' do
+          expect(page).to have_content 'ログインしました'
+          expect(current_path).to eq root_path
+        end
+        it 'ログアウトが成功すること' do
+          expect(page).to have_content 'ログインしました'
+          expect(page).to have_content 'ログアウト'
+        end
       end
     end
   end
