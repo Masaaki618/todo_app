@@ -1,4 +1,17 @@
-h1 タスク一覧
+h1.my-3 タスク一覧
+
+= search_form_for @q, class: 'mb-5' do |f|
+  .form-group.row.mb-3
+    = f.label :name_cont, '名称', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :name_cont, class: 'form-control'
+  .form-group.row.mb-3
+    = f.label :created_at_gteq, '登録日時', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :created_at_gteq, class: 'form-control'
+  .form-group.mb-3
+    = f.submit class: 'btn btn-outline-primary'
+
 = link_to '新規登録', new_task_path, class: 'btn btn-primary'
 .mb-3
 table.table.table-hover
