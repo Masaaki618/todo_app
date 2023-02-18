@@ -12,8 +12,13 @@ h1.my-3 タスク一覧
   .form-group.mb-3
     = f.submit class: 'btn btn-outline-primary'
 
-= link_to '新規登録', new_task_path, class: 'btn btn-primary'
 .mb-3
+  = link_to '新規登録', new_task_path, class: 'btn btn-primary'
+
+.mb-3
+  = paginate @tasks
+  = page_entries_info @tasks
+
 table.table.table-hover
   thead.thead-default
     tr
