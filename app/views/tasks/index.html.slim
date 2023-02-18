@@ -8,7 +8,7 @@ h1.my-3 タスク一覧
   .form-group.row.mb-3
     = f.label :created_at_gteq, '登録日時', class: 'col-sm-2 col-form-label'
     .col-sm-10
-      = f.search_field :created_at_gteq, class: 'form-control'
+      = f.date_field :created_at_gteq, class: 'form-control'
   .form-group.mb-3
     = f.submit class: 'btn btn-outline-primary'
 
