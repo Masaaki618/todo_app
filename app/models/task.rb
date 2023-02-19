@@ -5,7 +5,7 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
-  # rubocopを通過する書き方へ修正、Ruby2.5には非対応のためコメントアウト
+  # rubocopを通過する書き方へ修正、Ruby2.5では使用できないためコメントアウト
   # def self.ransackable_attributes(auth_object: nil)
   #   %w(name created_at)
   # end
