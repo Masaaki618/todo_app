@@ -13,7 +13,10 @@ h1 登録内容の確認
         = f.hidden_field :description
       tr
         th= Task.human_attribute_name(:image)
-        td= image_tag @task.image, class: 'w-75' if @task.image.attached?
-        = f.hidden_field :image, value: f.object.image.signed_id unless :image
+        - if @task.image.attached?
+          td= image_tag @task.image, class: 'w-75'
+          = f.hidden_field :image, value: f.object.image.signed_id
+        - else
+          td =
   = f.submit '戻る', name: 'back', class: 'btn btn-secondary mr-3'
   = f.submit '登録', class: 'btn btn-primary ms-2'
