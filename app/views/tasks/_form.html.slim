@@ -6,4 +6,8 @@
   .form-group.mb-3
     = f.label :description, class: 'form-label'
     = f.text_area :description, rows: 5, class: 'form-control', id: 'task_description'
+  .form-group.mb-3
+    = f.label :image, class: 'form-label d-block'
+    = image_tag @task.image, class: 'w-50' if @task.image.attached?
+    = f.file_field :image, class: 'form-control w-25 mt-3'
   = f.submit nil, class: 'btn btn-primary'
