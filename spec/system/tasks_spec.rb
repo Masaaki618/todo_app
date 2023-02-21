@@ -46,6 +46,16 @@ RSpec.describe 'Tasks', type: :system do
             click_button '登録する'
           end
         end
+
+        context 'タスクの編集' do
+          it '正常に更新されること' do
+            expect(page).to have_content 'ログインしました'
+            visit edit_task_path(task_a)
+            fill_in 'task_name', with: '新規作成のテストを更新しました'
+            fill_in 'task_description', with: 'これは新規作成のテストを更新してます'
+            click_button '更新する'
+          end
+        end
       end
     end
   end
