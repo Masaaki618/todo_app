@@ -5,14 +5,15 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
-  # rubocopを通過する書き方へ修正、Ruby2.5では使用できないためコメントアウト
-  # def self.ransackable_attributes(auth_object: nil)
-  #   %w(name created_at)
-  # end
+  # rubocop:disable Airbnb/OptArgParameters
+  def self.ransackable_attributes(auth_object = nil)
+    %w(name created_at)
+  end
 
-  # def self.ransackable_attributes(auth_object: nil)
-  #   []
-  # end
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
+  # rubocop:enable Airbnb/OptArgParameters
 
   private
 
