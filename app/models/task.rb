@@ -5,6 +5,16 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
+  # rubocop:disable Airbnb/OptArgParameters
+  def self.ransackable_attributes(auth_object = nil)
+    %w(name created_at)
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
+  # rubocop:enable Airbnb/OptArgParameters
+
   private
 
   def validate_name_not_including_comma
