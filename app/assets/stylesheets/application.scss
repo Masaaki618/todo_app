@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+th {
+  white-space: nowrap;
+}
+
 .td-center{
   line-height: 38px;
+}
+
+a {
+  text-decoration: none;
 }
