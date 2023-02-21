@@ -32,6 +32,21 @@ RSpec.describe 'Tasks', type: :system do
           end
         end
       end
+
+      describe 'タスク登録機能' do
+        let(:task_name) { '新規作成のテストを書く' }
+        let(:task_description) { 'これは新規作成のテストです' }
+
+        context 'タスクの新規登録' do
+          it '正常に登録されること' do
+            expect(page).to have_content 'ログインしました'
+            visit new_task_path
+            fill_in 'task_name', with: task_name
+            fill_in 'task_description', with: task_description
+            click_button '登録する'
+          end
+        end
+      end
     end
   end
 end
