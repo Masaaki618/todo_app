@@ -24,6 +24,7 @@ table.table.table-hover
     tr
       th= sort_link(@q, :name)
       th= sort_link(@q, :created_at)
-      th= 
+      th=
   tbody
     = render @tasks
+= link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-5'
