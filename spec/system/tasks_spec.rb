@@ -43,7 +43,7 @@ RSpec.describe 'Tasks', type: :system do
             visit new_task_path
             fill_in 'task_name', with: task_name
             fill_in 'task_description', with: task_description
-            click_button '登録する'
+            click_button '確認'
           end
         end
 
