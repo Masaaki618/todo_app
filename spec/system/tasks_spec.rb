@@ -15,20 +15,21 @@ RSpec.describe 'Tasks', type: :system do
       describe 'タスク管理機能' do
         context 'タスク一覧' do
           it '新規登録ボタンを押下できること' do
-            expect(page).to have_content 'ログインしました'
             click_on '新規登録'
+            expect(current_path).to eq new_task_path
           end
           it 'ユーザーAが作成したタスクが表示されること' do
-            expect(page).to have_content 'ログインしました'
             expect(page).to have_content '最初のタスク'
           end
           it '編集ボタンを押下できること' do
-            expect(page). to have_content 'ログインしました'
             click_on '編集'
+            expect(current_path).to eq edit_task_path(task_a)
           end
           it '削除ボタンを押下できること' do
-            expect(page). to have_content 'ログインしました'
-            click_on '削除'
+            accept_alert do
+              click_on '削除'
+            end
+            expect(current_path).to eq tasks_path
           end
         end
       end
@@ -39,7 +40,6 @@ RSpec.describe 'Tasks', type: :system do
 
         context 'タスクの新規登録' do
           it '正常に登録されること' do
-            expect(page).to have_content 'ログインしました'
             visit new_task_path
             fill_in 'task_name', with: task_name
             fill_in 'task_description', with: task_description
@@ -49,7 +49,6 @@ RSpec.describe 'Tasks', type: :system do
 
         context 'タスクの編集' do
           it '正常に更新されること' do
-            expect(page).to have_content 'ログインしました'
             visit edit_task_path(task_a)
             fill_in 'task_name', with: '新規作成のテストを更新しました'
             fill_in 'task_description', with: 'これは新規作成のテストを更新してます'

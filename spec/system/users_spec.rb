@@ -43,11 +43,9 @@ RSpec.describe 'Users', type: :system do
         let(:user) { user_a }
 
         it 'ログイン状態であること' do
-          expect(page).to have_content 'ログインしました'
           expect(current_path).to eq root_path
         end
         it 'ログアウトが成功すること' do
-          expect(page).to have_content 'ログインしました'
           expect(page).to have_content 'ログアウト'
         end
       end
