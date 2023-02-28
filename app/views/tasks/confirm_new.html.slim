@@ -11,5 +11,12 @@ h1 登録内容の確認
         th= Task.human_attribute_name(:description)
         td= auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div"))
         = f.hidden_field :description
+      tr
+        th= Task.human_attribute_name(:image)
+        - if @task.image.attached?
+          td= image_tag @task.image, class: 'w-75'
+          = f.hidden_field :image, value: f.object.image.signed_id
+        - else
+          td =
   = f.submit '戻る', name: 'back', class: 'btn btn-secondary mr-3'
   = f.submit '登録', class: 'btn btn-primary ms-2'
