@@ -19,7 +19,7 @@ h1.my-3 タスク一覧
   = paginate @tasks
   = page_entries_info @tasks
 
-table.table.table-hover
+table.table.table-hover.mb-4
   thead.thead-default
     tr
       th= sort_link(@q, :name)
@@ -27,4 +27,7 @@ table.table.table-hover
       th=
   tbody
     = render @tasks
-= link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-5'
+= link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-3'
+= form_tag import_tasks_path, multipart: true, class: 'd-flex flex-row mb-5' do
+  = file_field_tag :file, class: 'form-control', style: 'width: 330px; margin-right: 15px;'
+  = submit_tag 'インポート', class: 'btn btn-primary'
