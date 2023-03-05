@@ -6,9 +6,13 @@ class TasksController < ApplicationController
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page]).per(5)
 
+    @export_tasks = current_user.tasks
     respond_to do |format|
       format.html
-      format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
+      format.csv do
+        send_data @export_tasks.generate_csv,
+        filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv"
+      end
     end
   end
 
