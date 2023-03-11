@@ -21,7 +21,8 @@ class Task < ApplicationRecord
   end
 
   def self.generate_csv
-    CSV.generate(headers: true, encoding: Encoding::SJIS) do |csv|
+    bom = "\uFEFF"
+    CSV.generate(+bom, headers: true) do |csv|
       csv << csv_attributes
       all.each do |task|
         csv << csv_attributes.map { |attr| task.send(attr) }
@@ -30,7 +31,7 @@ class Task < ApplicationRecord
   end
 
   def self.import(file)
-    CSV.foreach(file.path, headers: true, encoding: 'Shift_JIS:UTF-8') do |row|
+    CSV.foreach(file.path, headers: true, encoding: 'UTF-8') do |row|
       task = new
       task.attributes = row.to_hash.slice(*csv_attributes)
       task.save!
