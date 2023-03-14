@@ -24,7 +24,10 @@ all_dell:
 
 rspec:
 	docker-compose exec web rspec
-    
+
+system_spec:
+	docker-compose exec web rspec spec/system
+
 # rubocop-airbnb使用時のコマンド
 # コンテナ内
 rubocop:
